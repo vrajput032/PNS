@@ -94,7 +94,23 @@ ul { list-style: none; }
   padding-top: 16px;
   padding-bottom: 16px;
 }
-.brand { display: flex; flex-direction: column; line-height: 1.1; }
+.brand { display: flex; align-items: center; gap: 12px; line-height: 1.1; }
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  color: var(--gold-light);
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name {
   font-family: var(--font-head);
   font-weight: 800;
