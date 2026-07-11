@@ -223,49 +223,18 @@ ul { list-style: none; padding-left: 0; margin-bottom: 0; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  line-height: 1.1;
+  line-height: 1;
   min-width: 0;
-}
-
-.brand-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
   flex-shrink: 0;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  color: var(--gold-light);
-  font-family: var(--font-head);
-  font-weight: 800;
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-  min-width: 0;
-}
-
-.brand-name {
-  font-family: var(--font-head);
-  font-weight: 800;
-  font-size: clamp(0.95rem, 3.5vw, 1.3rem);
-  letter-spacing: 0.4px;
-  color: var(--navy);
-  white-space: nowrap;
-}
-
-.brand-tag {
-  font-size: 0.65rem;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--gray-text);
-  margin-top: 2px;
+.brand-logo-img {
+  display: block;
+  width: clamp(140px, 32vw, 240px);
+  height: auto;
+  max-height: 48px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .nav {
@@ -373,9 +342,6 @@ ul { list-style: none; padding-left: 0; margin-bottom: 0; }
   }
 }
 
-@media (max-width: 991.98px) {
-  .brand-tag { display: none; }
-}
 
 /* Hero */
 .hero {
@@ -845,7 +811,19 @@ ul { list-style: none; padding-left: 0; margin-bottom: 0; }
   font-size: 0.85rem;
 }
 
-.back-to-top {
+.footer-brand img {
+  display: block;
+  width: 160px;
+  height: auto;
+  max-height: 40px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+.footer-brand:hover img {
+  opacity: 1;
+}
+
   color: var(--gold-light);
   font-weight: 600;
 }
