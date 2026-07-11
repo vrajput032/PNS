@@ -34,6 +34,12 @@
 
 <!-- Hero -->
 <section class="hero">
+  <img
+    class="hero-bg"
+    src="assets/hero-worker.png"
+    alt="Worker machining a metal part on shop-floor equipment at PNS Enterprises"
+  />
+  <div class="hero-overlay"></div>
   <div class="container hero-inner">
     <div class="hero-text">
       <p class="eyebrow">Manufacturing Excellence Since Day One</p>
@@ -48,20 +54,18 @@
         <a href="#products" class="btn btn-ghost">Explore Products</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-badge">
-        <span class="hero-badge-num">100%</span>
-        <span class="hero-badge-label">Quality Checked</span>
+    <div class="hero-badge">
+      <div class="progress-ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="progress-ring-track" cx="60" cy="60" r="52" />
+          <circle class="progress-ring-fill" cx="60" cy="60" r="52" />
+        </svg>
+        <span class="hero-badge-num" data-target="100">0%</span>
       </div>
-      <img
-        class="hero-photo"
-        src="assets/hero-worker.jpg"
-        alt="Worker machining a metal part on shop-floor equipment at PNS Enterprises"
-        width="1200"
-        height="1985"
-      />
+      <span class="hero-badge-label">Quality Checked</span>
     </div>
   </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll to About section">↓</a>
 </section>
 
 <!-- About -->
@@ -73,10 +77,9 @@
       <p>
         PNS Enterprises is a Sonipat-based manufacturer specializing in
         mild steel (MS) pipes designed specifically for geyser
-        applications. Led by <strong>Akshay Sharma</strong>, we combine
-        skilled craftsmanship with rigorous quality control to deliver
-        pipes that meet the exacting demands of geyser manufacturers
-        across the region.
+        applications. We combine skilled craftsmanship with rigorous
+        quality control to deliver pipes that meet the exacting demands
+        of geyser manufacturers across the region.
       </p>
       <p>
         From raw material selection to final dispatch, every pipe that
@@ -150,7 +153,7 @@
         <li><span class="check">✓</span> Consistent dimensional accuracy on every order</li>
         <li><span class="check">✓</span> Direct-from-manufacturer pricing, no middlemen</li>
         <li><span class="check">✓</span> Fast turnaround on custom fabrication requests</li>
-        <li><span class="check">✓</span> Dedicated support from Proprietor Akshay Sharma</li>
+        <li><span class="check">✓</span> Dedicated support from our partner team</li>
       </ul>
       <a href="#contact" class="btn btn-primary">Start a Conversation</a>
     </div>
@@ -224,6 +227,20 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  const badgeNum = document.querySelector('.hero-badge-num');
+  const target = parseInt(badgeNum.dataset.target, 10);
+  const duration = 1600;
+  let start = null;
+
+  function animateCount(ts) {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    const value = Math.round(progress * target);
+    badgeNum.textContent = value + '%';
+    if (progress < 1) requestAnimationFrame(animateCount);
+  }
+  requestAnimationFrame(animateCount);
 </script>
 </body>
 </html>
