@@ -54,7 +54,7 @@
   "name": "PNS Enterprises",
   "alternateName": "PNS Enterprises MS Pipe Manufacturer",
   "url": "https://pnsenterprises.com/",
-  "logo": "https://pnsenterprises.com/assets/favicon.svg",
+  "logo": "https://pnsenterprises.com/assets/logo.png",
   "image": "https://pnsenterprises.com/assets/share-cover.jpg",
   "description": "Sonipat-based manufacturer of mild steel (MS) pipes for geysers and CNC machining specialist, serving geyser manufacturers and OEMs across India.",
   "address": {
@@ -79,13 +79,16 @@
 <header class="site-header" id="top">
   <div class="container">
     <div class="header-inner">
-      <div class="brand">
-        <span class="brand-logo" aria-hidden="true">PNS</span>
-        <span class="brand-text">
-          <span class="brand-name">PNS <span class="accent">ENTERPRISES</span></span>
-          <span class="brand-tag">Geyser Pipe Manufacturer</span>
-        </span>
-      </div>
+      <a href="#top" class="brand" aria-label="PNS Enterprises — Geyser Pipe Manufacturer">
+        <img
+          class="brand-logo-img"
+          src="assets/logo.png"
+          alt="PNS Enterprises — Geyser Pipe Manufacturer"
+          width="240"
+          height="48"
+          fetchpriority="high"
+        />
+      </a>
       <nav class="nav d-none d-lg-flex">
         <a href="#about">About</a>
         <a href="#products">Products</a>
@@ -347,7 +350,10 @@
 <!-- Footer -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-inner d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+    <div class="footer-inner d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
+      <a href="#top" class="footer-brand" aria-label="PNS Enterprises — back to top">
+        <img src="assets/logo-light.svg" alt="" width="180" height="40" aria-hidden="true" />
+      </a>
       <p class="mb-0">&copy; <span id="year"></span> PNS Enterprises. All rights reserved.</p>
       <a href="#top" class="back-to-top">Back to top ↑</a>
     </div>
